@@ -8,3 +8,18 @@ class Course(models.Model):
     end_date = models.DateField()
     def __str__(self):
         return self.name
+    
+    
+class Resume(models.Model):
+    name = models.CharField(max_length= 100)
+    major = models.CharField(max_length=100)
+    date = models.DateTimeField()
+    type = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+    
+class counselling(models.Model) :
+    topic = models.CharField(max_length=100)
+    date_time = models.DateTimeField()
+    def __str__(self):
+        return self.topic

@@ -11,15 +11,23 @@ class Course(models.Model):
     
     
 class Resume(models.Model):
-    name = models.CharField(max_length= 100)
     major = models.CharField(max_length=100)
     date = models.DateTimeField()
     type = models.CharField(max_length=100)
     def __str__(self):
-        return self.name
+        return self.major
     
-class counselling(models.Model) :
+class Counselling(models.Model) :
     topic = models.CharField(max_length=100)
     date_time = models.DateTimeField()
     def __str__(self):
         return self.topic
+
+class User(models.Model):
+    full_name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200)
+    email = models.EmailField()
+    date_of_birth = models.DateField()
+    password = models.CharField(max_length=100)
+    def __str__(self):
+        return self.full_name
